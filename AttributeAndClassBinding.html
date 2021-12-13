@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .is-loading {
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <button
+        :disabled="isDisabled"
+        :class="{'is-loading': isLoading}"
+        @click="toggleDisabled"
+        @click="toggleClass"
+      >
+        Click Me
+      </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: "#root",
+        data: {
+          title: "Now the title is being set through JavaScript",
+          isLoading: false,
+          isDisabled: false,
+        },
+
+        methods: {
+          toggleClass() {
+            this.isLoading = !this.isLoading;
+          },
+
+          toggleDisabled() {
+            this.isDisabled = !this.isDisabled;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
