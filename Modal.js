@@ -1,5 +1,5 @@
 Vue.component("modal", {
-  template: `
+  template: String.raw`
       <div class="modal is-active">
           <div class="modal-background"></div>
           <div class="modal-content">
